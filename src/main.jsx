@@ -9,23 +9,46 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./index.css";
-import Navbar from './components/Navbar.jsx';
+
+import MainLayout from './layout/MainLayout.jsx';
+import Home from './pages/Home.jsx';
+import Products from './pages/Products.jsx';
+import About from './pages/About.jsx';
+import Contact from './pages/Contact.jsx';
+import MenuProvider from './components/MenuProvider.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navbar></Navbar>,
+    element: <MainLayout></MainLayout>,
     children:[
       {
-        path:"/about",
+        
+        path:"/",
+        element:<Home></Home>,
+
       
-      }
+    },
+       {
+        path: "/products",
+        element: <Products></Products>,
+      },
+      {
+        path:"/about",
+        element:<About></About>,
+      },
+      {
+        path:"/contact",
+        element:<Contact></Contact>,
+      },
     ]
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <MenuProvider>
+      <RouterProvider router={router} />
+    </MenuProvider>
   </React.StrictMode>
 );

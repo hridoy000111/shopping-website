@@ -1,7 +1,9 @@
 
 
 import './App.css'
-import Navbar from './components/Navbar'
+
+import MainLayout from './layout/MainLayout'
+
 
 function App() {
   
@@ -9,7 +11,7 @@ function App() {
   return (
     <>
     
-      <Navbar></Navbar>
+      <MainLayout></MainLayout>
     
      
     </>
