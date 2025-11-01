@@ -26,22 +26,22 @@ const Products = () => {
 
     return (
         <div className={paddingClass}>
-            <h2 className="text-5xl  text-center text-gray-700 mb-4">
+            <h2 className="text-3xl md:text-5xl text-center text-gray-700 mb-4">
                   Latest Products
              </h2>
 
             
 
-<div className="w-[80%] h-[1px] bg-gray-300 mx-auto mt-4 mb-16"></div>
- <div className=" flex gap-4 justify-center items-center mb-3">
-                <button onClick={()=> setCategory("All")} className='border rounded p-2 text-center text-sm hover:bg-gray-800 hover:text-white'>All</button>
-             <button  onClick={()=> setCategory("men's clothing")} className='border rounded p-2 text-center text-sm hover:bg-gray-800 hover:text-white'>Men's Clothing</button>
-             <button  onClick={()=> setCategory("women's clothing")} className='border rounded p-2 text-center text-sm hover:bg-gray-800 hover:text-white'>Women's Clothing</button>
-             <button  onClick={()=> setCategory("jewelery")} className='border rounded p-2 text-center text-sm hover:bg-gray-800 hover:text-white'>Jwellery</button>
-             <button  onClick={()=> setCategory("electronics")} className='border rounded p-2 text-center text-sm hover:bg-gray-800 hover:text-white'> Electronics</button>
+<div className="w-[80%] h-[1px] bg-gray-300 mx-auto mt-4 mb-12"></div>
+ <div className=" flex gap-4 justify-center items-center md:mb-3 mx-4">
+                <button onClick={()=> setCategory("All")} className='border rounded p-2  text-center text-xs md:text-sm hover:bg-gray-800 hover:text-white'>All</button>
+             <button  onClick={()=> setCategory("men's clothing")} className='border rounded p-2  text-center text-xs md:text-sm hover:bg-gray-800 hover:text-white'>Men's Clothing</button>
+             <button  onClick={()=> setCategory("women's clothing")} className='border rounded p-2  text-center text-xs md:text-sm hover:bg-gray-800 hover:text-white'>Women's Clothing</button>
+             <button  onClick={()=> setCategory("jewelery")} className='border rounded p-2  text-center text-xs md:text-sm hover:bg-gray-800 hover:text-white'>Jwellery</button>
+             <button  onClick={()=> setCategory("electronics")} className='border rounded p-2  text-center text-xs md:text-sm hover:bg-gray-800 hover:text-white'> Electronics</button>
              </div>
 
-            <div className="grid grid-cols-3 gap-6 p-6">
+            <div className="grid md:grid-cols-3  gap-6 p-6 grid-cols-2">
                 
                 {
                     filterredProducts.map(product => <Product key={product.id} product={product}></Product> )
