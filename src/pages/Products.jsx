@@ -1,10 +1,13 @@
 
 import React, { useEffect, useState } from 'react';
 import Product from './Product';
+import { useLocation } from 'react-router-dom';
 
 const Products = () => {
     const [products,setProducts]=useState([]);
     const [category,setCategory]=useState("All");
+    const location=useLocation();
+     const paddingClass = location.pathname === '/products' ? 'pt-24 mt-4' : 'pt-10 ';
 
     useEffect(()=>{
         fetch("https://fakestoreapi.com/products")
@@ -22,7 +25,7 @@ const Products = () => {
       })
 
     return (
-        <div className='pt-24 mt-4 '>
+        <div className={paddingClass}>
             <h2 className="text-5xl  text-center text-gray-700 mb-4">
                   Latest Products
              </h2>

@@ -6,10 +6,10 @@ import { Typewriter } from "react-simple-typewriter";
 const Hero = () => {
   
     return (
-        <div className='relative w-full h-[80vh] md:h-[90vh] overflow-hidden  '>
-            <img className='w-full  h-[80vh] object-cover ' src="/public/main.png.jpg" alt=""  />
+        <div className='relative w-full h-[40vh] md:h-[80vh]  overflow-hidden px-3 '>
+            <img className='w-full  h-[40vh] md:h-[80vh] object-cover ' src="/public/main.png.jpg" alt=""  />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-                <h2 className="text-3xl lg:text-4xl font-bold drop-shadow-lg">
+                <h2 className="text-xl md:text-4xl font-bold drop-shadow-lg mt-3">
                      <Typewriter
                       words={["Welcome To Shopping Website"]}
                       loop
