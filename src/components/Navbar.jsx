@@ -4,9 +4,11 @@ import { CiUser ,CiLogin,CiShoppingCart,CiMenuBurger} from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import { useContext } from 'react';
 import { menuContext } from '../components/menuContext';
+import { useCart } from "../components/CartContext";
 
 const Navbar = () => {
      const {menuOpen,setMenuOpen}=useContext(menuContext);
+     const {cartItems}=useCart();
     return (
        
             <nav className="bg-neutral-50  shadow py-6 fixed top-0 left-0 right-0 z-50">
@@ -23,7 +25,13 @@ const Navbar = () => {
                 <div className="hidden lg:flex space-x-4  ">
                     <button className='flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded '> <CiLogin /><span>Login</span> </button>
                     <button className='flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded '> <CiUser /><span>Register</span> </button>
-                    <button className='flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded '> <CiShoppingCart/><span>Cart</span> </button>
+                    <Link className='flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded ' to="/cart"> <CiShoppingCart/><span>Cart
+                           {cartItems.length > 0 && (
+     <span >
+       ( {cartItems.length})
+     </span>
+   )}
+                        </span> </Link>
                  
                 </div>
                 {/* small device menu icon*/ }
@@ -39,26 +47,29 @@ const Navbar = () => {
 
                 {
                     menuOpen && (
-                        <div className={`lg:hidden flex flex-col space-y-3   font-josefin bg-neutral-50
-      overflow-hidden transition-all duration-500 ease-in-out
-      transform origin-top
-      ${menuOpen ? "max-h-96 opacity-100 scale-y-100" : "max-h-0 opacity-0 scale-y-0"}
-      `}>
-                  <Link  onClick={() => setMenuOpen(false)}
-            className="block text-gray-700 hover:text-red-500"  to="/">Home</Link>
-            <Link onClick={() => setMenuOpen(false)}
-            className="block text-gray-700 hover:text-red-500" to="/products">Products</Link>
-                  <Link onClick={() => setMenuOpen(false)}
-            className="block text-gray-700 hover:text-red-500" to="/about">About</Link>
+                        <div className={`lg:hidden flex flex-col space-y-3 font-josefin bg-neutral-50 overflow-hidden transition-all duration-500 ease-in-out transform origin-top ${menuOpen ? "max-h-96 opacity-100 scale-y-100" : "max-h-0 opacity-0 scale-y-0"}`}>
+
+                  <button  onClick={() => setMenuOpen(false)}
+            className="block text-gray-700 hover:text-red-500"  to="/">Home</button>
+            <button onClick={() => setMenuOpen(false)}
+            className="block text-gray-700 hover:text-red-500" to="/products">Products</button>
+                  <button onClick={() => setMenuOpen(false)}
+            className="block text-gray-700 hover:text-red-500" to="/about">About</button>
                   
                  
-                  <Link onClick={() => setMenuOpen(false)}
-            className="block text-gray-700 hover:text-red-500" to="/contact">Contact</Link>
+                  <button onClick={() => setMenuOpen(false)}
+            className="block text-gray-700 hover:text-red-500" to="/contact">Contact</button>
 
              <div className="flex justify-center  gap-4  ">
                     <button className='flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded '> <CiLogin /><span>Login</span> </button>
                     <button className='flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded '> <CiUser /><span>Register</span> </button>
-                    <button className='flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded '> <CiShoppingCart/><span>Cart</span> </button>
+                    <Link className='flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded ' to="/cart"> <CiShoppingCart/><span>Cart
+                           {cartItems.length > 0 && (
+     <span >
+       ( {cartItems.length})
+     </span>
+   )}
+                        </span> </Link>
                  
                 </div>
                 </div>

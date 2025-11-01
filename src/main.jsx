@@ -1,8 +1,8 @@
-import { StrictMode } from 'react'
+import { StrictMode } from 'react';
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import './index.css'
-import App from './App.jsx'
+import './index.css';
+
 
 import {
   createBrowserRouter,
@@ -15,7 +15,10 @@ import Home from './pages/Home.jsx';
 import Products from './pages/Products.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
+import Cart from './pages/Cart.jsx';
 import MenuProvider from './components/MenuProvider.jsx';
+import { CartProvider } from './components/CartContext.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -41,6 +44,11 @@ const router = createBrowserRouter([
         path:"/contact",
         element:<Contact></Contact>,
       },
+      
+      {
+        path:"/cart",
+        element:<Cart></Cart>,
+      }
     ]
   },
 ]);
@@ -48,7 +56,11 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <MenuProvider>
-      <RouterProvider router={router} />
+      
+        <CartProvider>
+          <RouterProvider router={router} />
+        </CartProvider>
+      
     </MenuProvider>
   </React.StrictMode>
 );
