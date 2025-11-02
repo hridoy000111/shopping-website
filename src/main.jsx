@@ -15,6 +15,7 @@ import Cart from "./pages/Cart.jsx";
 import MenuProvider from "./components/MenuProvider.jsx";
 import { CartProvider } from "./components/CartContext.jsx";
 import Register from "./pages/Register.jsx";
+import Login from "./pages/Login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
       },
     ],
   },
