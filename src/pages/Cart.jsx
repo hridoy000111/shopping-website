@@ -1,11 +1,15 @@
-
 import React from "react";
 import { useCart } from "../components/CartContext";
 import Footer from "../components/Footer";
 
 const Cart = () => {
-  const { cartItems, addToCart, decreaseQuantity, removeFromCart, totalAmount } =
-    useCart();
+  const {
+    cartItems,
+    addToCart,
+    decreaseQuantity,
+    removeFromCart,
+    totalAmount,
+  } = useCart();
 
   return (
     <div className="max-w-6xl mx-auto mt-20 pt-20">
