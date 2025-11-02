@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Product from './Product';
 import { useLocation } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 const Products = () => {
     const [products,setProducts]=useState([]);
@@ -32,7 +33,7 @@ const Products = () => {
 
             
 
-<div className="w-[80%] h-[1px] bg-gray-300 mx-auto mt-4 mb-12"></div>
+<div className="w-[80%] h-[2px] bg-gray-500 mx-auto mt-4 mb-12"></div>
  <div className=" flex gap-4 justify-center items-center md:mb-3 mx-4">
                 <button onClick={()=> setCategory("All")} className='border rounded p-2  text-center text-xs md:text-sm hover:bg-gray-800 hover:text-white'>All</button>
              <button  onClick={()=> setCategory("men's clothing")} className='border rounded p-2  text-center text-xs md:text-sm hover:bg-gray-800 hover:text-white'>Men's Clothing</button>
@@ -40,13 +41,15 @@ const Products = () => {
              <button  onClick={()=> setCategory("jewelery")} className='border rounded p-2  text-center text-xs md:text-sm hover:bg-gray-800 hover:text-white'>Jwellery</button>
              <button  onClick={()=> setCategory("electronics")} className='border rounded p-2  text-center text-xs md:text-sm hover:bg-gray-800 hover:text-white'> Electronics</button>
              </div>
-
-            <div className="grid md:grid-cols-3  gap-6 p-6 grid-cols-2">
+              
+             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 p-6 max-w-6xl mx-auto place-items-center justify-center">
                 
                 {
-                    filterredProducts.map(product => <Product key={product.id} product={product}></Product> )
+                    filterredProducts.map((product) => <Product  key={product.id} product={product}></Product> )
                 }
             </div>
+
+            <Footer></Footer>
             </div>
       
     );

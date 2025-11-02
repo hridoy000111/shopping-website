@@ -9,7 +9,7 @@ const Product = ({product}) => {
 
     return (
         
-        <div className='border  border-gray-300 rounded-2xl shadow-md  bg-white hover:shadow-lg transition-all duration-300 '>
+        <div className='w-fit border  border-gray-300 rounded-2xl shadow-md  bg-white hover:shadow-lg transition-all duration-300 '>
              {/* Product Image */}
       <div className="w-full h-64 flex justify-center items-center  overflow-hidden mb-3 p-4">
         <img

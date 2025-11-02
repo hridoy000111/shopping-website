@@ -1,6 +1,7 @@
 
 import React from "react";
 import { useCart } from "../components/CartContext";
+import Footer from "../components/Footer";
 
 const Cart = () => {
   const { cartItems, addToCart, decreaseQuantity, removeFromCart, totalAmount } =
@@ -89,6 +90,8 @@ const Cart = () => {
           </div>
         </div>
       )}
+
+      <Footer></Footer>
     </div>
   );
 };

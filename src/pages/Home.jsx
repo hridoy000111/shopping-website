@@ -8,6 +8,7 @@ import { menuContext } from '../components/menuContext';
 
 
 
+
 const Home = () => {
     const {menuOpen}=useContext(menuContext)
     return (
@@ -15,6 +16,7 @@ const Home = () => {
 
                 <Hero></Hero>
                 <Products></Products>
+                
                 
     </div>   
    );
