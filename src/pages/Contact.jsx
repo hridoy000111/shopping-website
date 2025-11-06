@@ -8,7 +8,7 @@ const Contact = () => {
       <hr className="my-4 border-gray-300 w-[80%] mx-auto" />
 
       <div className="flex justify-center">
-        <form className="w-full max-w-sm">
+        <form className="w-full max-w-[250px] md:max-w-sm">
           <div className="my-3">
             <label htmlFor="Name" className="block font-medium mb-1 ">
               Full Name
