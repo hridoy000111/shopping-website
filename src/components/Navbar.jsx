@@ -33,7 +33,10 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="hidden lg:flex space-x-4  ">
-          <Link className="flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded ">
+          <Link
+            to="/login"
+            className="flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded "
+          >
             {" "}
             <CiLogin />
             <span>Login</span>{" "}
@@ -109,7 +112,10 @@ const Navbar = () => {
           </Link>
 
           <div className="flex justify-center  gap-4  ">
-            <Link className="flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded ">
+            <Link
+              to="/login"
+              className="flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded "
+            >
               {" "}
               <CiLogin />
               <span>Login</span>{" "}
