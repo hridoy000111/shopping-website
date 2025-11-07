@@ -113,6 +113,7 @@ const Navbar = () => {
 
           <div className="flex justify-center  gap-4  ">
             <Link
+              onClick={() => setMenuOpen(false)}
               to="/login"
               className="flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded "
             >
@@ -121,6 +122,7 @@ const Navbar = () => {
               <span>Login</span>{" "}
             </Link>
             <Link
+              onClick={() => setMenuOpen(false)}
               to="/register"
               className="flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded "
             >
@@ -129,6 +131,7 @@ const Navbar = () => {
               <span>Register</span>{" "}
             </Link>
             <Link
+              onClick={() => setMenuOpen(false)}
               className="flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded "
               to="/cart"
             >
