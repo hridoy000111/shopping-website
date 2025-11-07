@@ -1,6 +1,7 @@
 import React from "react";
 import { useCart } from "../components/CartContext";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const {
@@ -12,7 +13,7 @@ const Cart = () => {
   } = useCart();
 
   return (
-    <div className="max-w-6xl mx-auto mt-20 pt-20">
+    <div className="max-w-6xl mx-8 md:mx-auto mt-20 pt-20">
       <h2 className="text-3xl font-bold text-center mb-8">Cart</h2>
 
       {cartItems.length === 0 ? (
@@ -35,15 +36,15 @@ const Cart = () => {
                     className="w-20 h-20 object-contain"
                   />
                   <div>
-                    <h4 className="font-semibold">{item.title}</h4>
-                    <p className="text-gray-500">${item.price}</p>
+                    <h4 className="font-semibold text-sm ">{item.title}</h4>
+                    <p className="text-gray-500 ">${item.price}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <button
                     onClick={() => decreaseQuantity(item.id)}
-                    className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
+                    className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300 ml-2"
                   >
                     -
                   </button>
@@ -57,14 +58,14 @@ const Cart = () => {
                 </div>
 
                 <div>
-                  <p className="font-semibold">
+                  <p className="font-semibold ml-4">
                     ${(item.price * item.quantity).toFixed(2)}
                   </p>
                 </div>
 
                 <button
                   onClick={() => removeFromCart(item.id)}
-                  className="text-red-600 hover:underline"
+                  className="text-red-600 ml-4 hover:underline"
                 >
                   Remove
                 </button>
@@ -88,9 +89,12 @@ const Cart = () => {
               <span>Total amount</span>
               <span>${(totalAmount + 30).toFixed(2)}</span>
             </p>
-            <button className="bg-black text-white w-full py-2 rounded-lg hover:bg-gray-800">
+            <Link
+              to="/checkout"
+              className="bg-black text-white w-full py-2 px-2 text-center flex justify-center rounded-lg hover:bg-gray-800"
+            >
               Go to checkout
-            </button>
+            </Link>
           </div>
         </div>
       )}

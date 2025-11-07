@@ -16,6 +16,7 @@ import MenuProvider from "./components/MenuProvider.jsx";
 import { CartProvider } from "./components/CartContext.jsx";
 import Register from "./pages/Register.jsx";
 import Login from "./pages/Login.jsx";
+import CheckOut from "./pages/CheckOut.jsx";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/checkout",
+        element: <CheckOut></CheckOut>,
       },
     ],
   },
