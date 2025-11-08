@@ -17,6 +17,8 @@ import { CartProvider } from "./components/CartContext.jsx";
 import Register from "./pages/Register.jsx";
 import Login from "./pages/Login.jsx";
 import CheckOut from "./pages/CheckOut.jsx";
+import SingleProductPage from "./pages/SingleProductPage.jsx";
+import { ProductsProvider } from "./components/ProductsContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +58,10 @@ const router = createBrowserRouter([
         path: "/checkout",
         element: <CheckOut></CheckOut>,
       },
+      {
+        path: "/product/:productId",
+        element: <SingleProductPage></SingleProductPage>,
+      },
     ],
   },
 ]);
@@ -64,7 +70,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <MenuProvider>
       <CartProvider>
-        <RouterProvider router={router} />
+        <ProductsProvider>
+          <RouterProvider router={router} />
+        </ProductsProvider>
       </CartProvider>
     </MenuProvider>
   </React.StrictMode>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useCart } from "../components/CartContext";
 
 const Product = ({ product }) => {
@@ -28,9 +29,12 @@ const Product = ({ product }) => {
       </div>
 
       <div className="border-t border-gray-300 text-center pt-3 pb-4  flex flex-col md:flex-row items-center md:justify-center gap-4 ">
-        <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300">
+        <Link
+          to={"/product/" + product.id}
+          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300"
+        >
           Buy Now
-        </button>
+        </Link>
 
         <button
           onClick={() => addToCart(product)}

@@ -1,21 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import Product from "./Product";
 import { useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
+import { ProductsContext } from "../components/ProductsContext";
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
+  const { products } = useContext(ProductsContext);
+
   const [category, setCategory] = useState("All");
   const location = useLocation();
   const paddingClass =
     location.pathname === "/products" ? "pt-24 mt-4" : "pt-10 ";
-
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
 
   const filterredProducts =
     category === "All"
