@@ -1,4 +1,3 @@
-import React from "react";
 import { useCart } from "../components/CartContext";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
@@ -20,7 +19,6 @@ const Cart = () => {
         <p className="text-center text-gray-600">Your cart is empty 🛍️</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Item List */}
           <div className="md:col-span-2 border rounded-lg p-4">
             <h3 className="font-semibold mb-3 border-b pb-2">Item List</h3>
 
@@ -73,7 +71,6 @@ const Cart = () => {
             ))}
           </div>
 
-          {/* Order Summary */}
           <div className="border rounded-lg p-4">
             <h3 className="font-semibold mb-3 border-b pb-2">Order Summary</h3>
             <p className="flex justify-between mb-2">

@@ -14,6 +14,7 @@ const ShowSingleProduct = ({ productId }) => {
     fetch(`https://fakestoreapi.com/products/${productId}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
+    window.scrollTo(0, 0);
   }, [productId]);
 
   if (!product) {
@@ -61,7 +62,7 @@ const ShowSingleProduct = ({ productId }) => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto mt-12 ">
+      <div className=" hidden md:block  container mx-auto mt-12 ">
         <h2 className="text-2xl font-bold text-gray-700 mb-8">
           You may also like
         </h2>
@@ -81,6 +82,26 @@ const ShowSingleProduct = ({ productId }) => {
                   alt={item.title}
                   className="object-contain w-60 h-60"
                 />
+                <h2 className="text-center my-8 font-bold text-xl text-gray-700">
+                  {item.title.length > 12
+                    ? item.title.substring(0, 12) + "..."
+                    : item.title}
+                </h2>
+                <div className="border-t border-gray-300 text-center pt-3 pb-4  flex flex-col md:flex-row items-center md:justify-center gap-4 ">
+                  <Link
+                    to={"/product/" + item.id}
+                    className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-700 transition-all duration-300"
+                  >
+                    Buy Now
+                  </Link>
+
+                  <button
+                    onClick={() => addToCart(item)}
+                    className="px-4 py-2 border border-black text-black rounded-lg hover:bg-black hover:text-white transition-all duration-300"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
               </div>
             ))}
           </div>
