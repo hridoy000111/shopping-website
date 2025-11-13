@@ -7,7 +7,7 @@ const Hero = () => {
     <div className="relative w-full h-[40vh] md:h-[80vh]    ">
       <img
         className="w-full rounded h-[40vh] md:h-[80vh] object-cover "
-        src="/public/main.png.jpg"
+        src="/main.png.jpg"
         alt=""
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white mt-12 lg:mt-3">
