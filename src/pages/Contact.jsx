@@ -1,6 +1,3 @@
-import React from "react";
-import Footer from "../components/Footer";
-
 const Contact = () => {
   return (
     <div className="container  py-4 pt-20 mx-auto">
@@ -54,7 +51,6 @@ const Contact = () => {
           </div>
         </form>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

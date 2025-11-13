@@ -1,21 +1,13 @@
+import "./App.css";
 
-
-import './App.css'
-
-import MainLayout from './layout/MainLayout'
-
+import MainLayout from "./layout/MainLayout";
 
 function App() {
-  
-
   return (
     <>
-    
       <MainLayout></MainLayout>
-    
-     
     </>
-  )
+  );
 }
 
-export default App
+export default App;

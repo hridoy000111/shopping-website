@@ -1,5 +1,3 @@
-import Footer from "../components/Footer";
-
 const About = () => {
   return (
     <div className="mt-16 pt-16">
@@ -69,8 +67,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
-      <Footer></Footer>
     </div>
   );
 };

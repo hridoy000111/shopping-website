@@ -1,15 +1,16 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { CiUser, CiLogin, CiShoppingCart, CiMenuBurger } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import { useContext } from "react";
-import { menuContext } from "../components/menuContext";
-import { useCart } from "../components/CartContext";
+import { menuContext } from "./Context/menuContext";
+import { useCart } from "./Context/CartContext";
 
 const Navbar = () => {
+  const location = useLocation();
   const { menuOpen, setMenuOpen } = useContext(menuContext);
   const { cartItems } = useCart();
   return (
-    <nav className="bg-neutral-50  shadow py-3 fixed top-0 left-0 right-0 z-50">
+    <nav className="bg-neutral-50   py-2 fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto flex justify-between items-center px-4 md:px-8 py-3">
         <h2
           style={{ textShadow: "1px 1px 2px blue" }}
@@ -17,48 +18,70 @@ const Navbar = () => {
         >
           NovaShop
         </h2>
-        <div className="hidden lg:flex space-x-4 text-base text-gray-500 font-josefin ">
-          <Link className="hover:text-red-500" to="/">
+        <div className="hidden lg:flex space-x-4 text-base text-gray-500 font-josefin  ">
+          <NavLink
+            to="/"
+            className={({ isActive }) => ` hover:text-red-500
+             ${isActive ? "text-black font-bold" : "text-gray-500"}
+           `}
+          >
             Home
-          </Link>
-          <Link className="hover:text-red-500" to="/about">
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => ` hover:text-red-500
+             ${isActive ? "text-black font-bold" : "text-gray-500"}
+           `}
+          >
             About
-          </Link>
-          <Link className="hover:text-red-500" to="/products">
+          </NavLink>
+          <NavLink
+            to="/products"
+            className={({ isActive }) => ` hover:text-red-500
+             ${isActive ? "text-black font-bold" : "text-gray-500"}
+           `}
+          >
             Products
-          </Link>
-
-          <Link className="hover:text-red-500" to="/contact">
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => ` hover:text-red-500
+             ${isActive ? "text-black font-bold" : "text-gray-500"}
+           `}
+          >
             Contact
-          </Link>
+          </NavLink>
         </div>
         <div className="hidden lg:flex space-x-4  ">
           <Link
             to="/login"
-            className="flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded "
+            className={`flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded ${
+              location.pathname === "/login" ? "bg-gray-600  text-white" : ""
+            } `}
           >
-            {" "}
             <CiLogin />
-            <span>Login</span>{" "}
+            <span>Login</span>
           </Link>
           <Link
             to="/register"
-            className="flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded "
+            className={`flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded ${
+              location.pathname === "/register" ? "bg-gray-600  text-white" : ""
+            } `}
           >
-            {" "}
             <CiUser />
-            <span>Register</span>{" "}
+            <span>Register</span>
           </Link>
           <Link
-            className="flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded "
+            className={`flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded ${
+              location.pathname === "/cart" ? "bg-gray-600  text-white" : ""
+            } `}
             to="/cart"
           >
-            {" "}
             <CiShoppingCart />
             <span>
               Cart
               {cartItems.length > 0 && <span>( {cartItems.length})</span>}
-            </span>{" "}
+            </span>
           </Link>
         </div>
         {/* small device menu icon*/}
@@ -91,7 +114,7 @@ const Navbar = () => {
           <Link
             onClick={() => setMenuOpen(false)}
             className="block text-gray-700 hover:text-red-500"
-            to="/products"
+            to="/product"
           >
             Products
           </Link>
@@ -117,30 +140,27 @@ const Navbar = () => {
               to="/login"
               className="flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded "
             >
-              {" "}
               <CiLogin />
-              <span>Login</span>{" "}
+              <span>Login</span>
             </Link>
             <Link
               onClick={() => setMenuOpen(false)}
               to="/register"
               className="flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded "
             >
-              {" "}
               <CiUser />
-              <span>Register</span>{" "}
+              <span>Register</span>
             </Link>
             <Link
               onClick={() => setMenuOpen(false)}
               className="flex items-center gap-2 border  border-black px-3 py-1 hover:bg-gray-400 rounded "
               to="/cart"
             >
-              {" "}
               <CiShoppingCart />
               <span>
                 Cart
                 {cartItems.length > 0 && <span>( {cartItems.length})</span>}
-              </span>{" "}
+              </span>
             </Link>
           </div>
         </div>

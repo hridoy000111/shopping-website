@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="relative w-full h-[40vh] md:h-[80vh]  overflow-hidden px-3 ">
+    <div className="relative w-full h-[40vh] md:h-[80vh]    ">
       <img
-        className="w-full  h-[40vh] md:h-[80vh] object-cover "
+        className="w-full rounded h-[40vh] md:h-[80vh] object-cover "
         src="/public/main.png.jpg"
         alt=""
       />
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-        <h2 className="text-xl md:text-4xl font-bold drop-shadow-lg mt-3">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white mt-12 lg:mt-3">
+        <h2 className="text-xl md:text-4xl font-bold    ">
           <Typewriter
             words={["Welcome To Shopping Website"]}
             loop

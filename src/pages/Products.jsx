@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import Product from "./Product";
 import { useLocation } from "react-router-dom";
-import Footer from "../components/Footer";
-import { ProductsContext } from "../components/ProductsContext";
+
+import { ProductsContext } from "../components/Context/ProductsContext";
 
 const Products = () => {
   const { products } = useContext(ProductsContext);
@@ -71,8 +71,6 @@ const Products = () => {
           <Product key={product.id} product={product}></Product>
         ))}
       </div>
-
-      <Footer></Footer>
     </div>
   );
 };

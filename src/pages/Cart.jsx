@@ -1,5 +1,5 @@
-import { useCart } from "../components/CartContext";
-import Footer from "../components/Footer";
+import { useCart } from "../components/Context/CartContext";
+
 import { Link } from "react-router-dom";
 
 const Cart = () => {
@@ -95,8 +95,6 @@ const Cart = () => {
           </div>
         </div>
       )}
-
-      <Footer></Footer>
     </div>
   );
 };

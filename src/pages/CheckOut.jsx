@@ -1,5 +1,4 @@
-import Footer from "../components/Footer";
-import { useCart } from "../components/CartContext";
+import { useCart } from "../components/Context/CartContext";
 
 const CheckOut = () => {
   const { cartItems, totalAmount } = useCart();
@@ -214,7 +213,6 @@ const CheckOut = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

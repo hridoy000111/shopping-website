@@ -12,13 +12,13 @@ import Products from "./pages/Products.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import Cart from "./pages/Cart.jsx";
-import MenuProvider from "./components/MenuProvider.jsx";
-import { CartProvider } from "./components/CartContext.jsx";
+import MenuProvider from "./components/Context/MenuProvider.jsx";
+import { CartProvider } from "./components/Context/CartContext.jsx";
 import Register from "./pages/Register.jsx";
 import Login from "./pages/Login.jsx";
 import CheckOut from "./pages/CheckOut.jsx";
 import SingleProductPage from "./pages/SingleProductPage.jsx";
-import { ProductsProvider } from "./components/ProductsContext.jsx";
+import { ProductsProvider } from "./components/Context/ProductsContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
         element: <CheckOut></CheckOut>,
       },
       {
-        path: "/product/:productId",
+        path: "/product/:id",
         element: <SingleProductPage></SingleProductPage>,
       },
     ],
