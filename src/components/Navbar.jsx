@@ -114,7 +114,7 @@ const Navbar = () => {
           <Link
             onClick={() => setMenuOpen(false)}
             className="block text-gray-700 hover:text-red-500"
-            to="/product"
+            to="/products"
           >
             Products
           </Link>
@@ -134,7 +134,7 @@ const Navbar = () => {
             Contact
           </Link>
 
-          <div className="flex justify-center  gap-4  ">
+          <div className="flex flex-wrap justify-center  gap-4  ">
             <Link
               onClick={() => setMenuOpen(false)}
               to="/login"

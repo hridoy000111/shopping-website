@@ -32,7 +32,7 @@ const Products = () => {
       </h2>
 
       <div className="w-[80%] h-[2px] bg-gray-500 mx-auto mt-4 mb-12"></div>
-      <div className=" flex gap-4 justify-center items-center md:mb-3 mx-4">
+      <div className=" flex flex-wrap gap-4 justify-center items-center md:mb-3 mx-4">
         <button
           onClick={() => setCategory("All")}
           className="border rounded p-2  text-center text-xs md:text-sm hover:bg-gray-800 hover:text-white"
@@ -61,12 +61,11 @@ const Products = () => {
           onClick={() => setCategory("electronics")}
           className="border rounded p-2  text-center text-xs md:text-sm hover:bg-gray-800 hover:text-white"
         >
-          {" "}
           Electronics
         </button>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 p-6 max-w-6xl mx-auto place-items-center justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 max-w-6xl mx-auto  justify-center">
         {filterredProducts.map((product) => (
           <Product key={product.id} product={product}></Product>
         ))}

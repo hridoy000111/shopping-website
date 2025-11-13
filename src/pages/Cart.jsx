@@ -25,16 +25,16 @@ const Cart = () => {
             {cartItems.map((item) => (
               <div
                 key={item.id}
-                className="flex items-center justify-between py-3 border-b"
+                className="flex flex-col md:flex-row items-center justify-between py-3 border-b"
               >
-                <div className="flex items-center gap-4">
+                <div className="flex flex-col md:flex-row items-center gap-4">
                   <img
                     src={item.image}
                     alt={item.title}
                     className="w-20 h-20 object-contain"
                   />
                   <div>
-                    <h4 className="font-semibold text-sm ">{item.title}</h4>
+                    <h4 className="font-semibold text-sm  ">{item.title}</h4>
                     <p className="text-gray-500 ">${item.price}</p>
                   </div>
                 </div>
@@ -56,7 +56,7 @@ const Cart = () => {
                 </div>
 
                 <div>
-                  <p className="font-semibold ml-4">
+                  <p className="font-semibold my-4 ml-4">
                     ${(item.price * item.quantity).toFixed(2)}
                   </p>
                 </div>
